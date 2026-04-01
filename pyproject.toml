@@ -59,6 +59,9 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/python_project_template"]
 
+[tool.uv]
+exclude-newer = "1 week"
+
 [tool.ruff]
 preview = true
 include = [
