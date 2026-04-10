@@ -13,11 +13,11 @@ Write in English with a professional, friendly tone. Keep it concise and scannab
 
 ### Description
 
-Follow the section structure in `.github/pull_request_template.md` and fill each section using bullet points.
+Follow the section structure in `.github/pull_request_template.md` and fill each section as described below.
 
 #### Ticket
 
-- Add the issue/ticket link or `#number` (use `N/A` if unknown)
+- Write the issue/ticket link or `#number` directly (not as a bullet list). Use `N/A` if unknown.
 
 #### Summary
 
