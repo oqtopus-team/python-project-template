@@ -21,7 +21,7 @@ Follow the section structure in `.github/pull_request_template.md` and fill each
 
 #### Summary
 
-- Explain what changed and why (1–2 bullets)
+- Explain what changed and why (1–2 sentences)
 - Mention impact/risk and affected areas (API/Workflow/UI, compatibility, config changes)
 
 #### Changes
