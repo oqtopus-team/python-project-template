@@ -1,10 +1,4 @@
 {
-  "markdownlint.config": {
-    "MD013": false,
-    "MD041": false,
-    "MD046": false,
-    "MD060": false
-  },
   "[python]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
@@ -14,10 +8,18 @@
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "ruff.path": ["${workspaceFolder}/.venv/bin/ruff"],
-  "ruff.configuration": "${workspaceFolder}/pyproject.toml",
   "mypy-type-checker.path": ["${workspaceFolder}/.venv/bin/mypy"],
-  "mypy-type-checker.args": ["--config-file=${workspaceFolder}/pyproject.toml"],
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
   "python.terminal.activateEnvironment": true,
-  "python-envs.defaultEnvManager": "ms-python.python:uv"
+  "python-envs.defaultEnvManager": "ms-python.python:uv",
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "file": ".github/instructions/commit-message-instructions.md"
+    }
+  ],
+  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+    {
+      "file": ".github/instructions/pull-request-description-instructions.md"
+    }
+  ]
 }
