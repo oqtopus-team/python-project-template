@@ -3,19 +3,20 @@
 
 ## Branch Strategy
 
-!!! warning "Template Note"
-    This note is included for the project template.
-    Remove this note before publishing the documentation.
-
-    Decide whether your project should use a `develop` branch.
-    This depends on the project size and development workflow.
-
-    Two branch strategy diagrams are provided below:
-
-    - one using a `develop` branch
-    - one without a `develop` branch
-
-    Keep the diagram that fits your project and remove the other one.
+> ⚠️ **Template Note**
+>
+> This note is included for the project template.
+> Remove this note before publishing the documentation.
+>
+> Decide whether your project should use a `develop` branch.
+> This depends on the project size and development workflow.
+>
+> Two branch strategy diagrams are provided below:
+>
+> - one using a `develop` branch
+> - one without a `develop` branch
+>
+> Keep the diagram that fits your project and remove the other one.
 
 As shown in the diagram below, the `develop` branch is created from the `main` branch, and feature branches (`feature/xxx`) are created from the `develop` branch for development. The `main` branch is the release branch, while the `develop` branch is for development.
 
@@ -148,3 +149,27 @@ Below is the correspondence between prefixes and labels:
 |test: | `test` | Adding or correcting existing tests |
 |ci: | `ci` | Adding or updating CI configuration and scripts |
 |chore: | `chore` | Minor changes or maintenance tasks |
+
+## CI
+
+This project uses GitHub Actions to automate checks and repository management.
+
+### Automated Checks
+
+On pull requests, the following checks are automatically executed:
+
+- linting and formatting (ruff)
+- static type checking (mypy)
+- tests (pytest)
+
+Ensure that all checks pass before merging.
+
+### Labeling
+
+Labels are automatically assigned to pull requests targeting the default
+branch based on the commit message prefix (see [Conventional Commits](#conventional-commits)).
+
+### Release
+
+Releases are managed automatically via CI workflows based on Git tags.
+Contributors typically do not need to create releases manually.

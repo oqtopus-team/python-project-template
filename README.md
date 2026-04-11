@@ -32,7 +32,9 @@ This template includes a modern Python development environment:
 - testing with **pytest**
 - documentation using **MkDocs + Material**
 - automatic API reference generation with **mkdocstrings**
-- Markdown linting with **pymarkdownlint**
+- markdown linting with **pymarkdownlint**
+- recommended VSCode settings (`.vscode/settings.json`)
+- pull request-based development workflow
 - GitHub Actions CI workflow
 - coverage reporting with **Codecov**
 - documentation hosting via **Read the Docs**
@@ -49,6 +51,7 @@ This template includes a modern Python development environment:
 ├─ docs_scripts/      # Helper scripts for building MkDocs documentation (optional)
 ├─ config/            # Example configuration files (optional)
 ├─ logs/              # Application log files (optional)
+├─ .vscode/           # VSCode settings (optional)
 ├─ .github/           # GitHub workflows and repository settings
 ├─ pyproject.toml     # Project configuration and dependencies
 ├─ Makefile           # Development commands
@@ -176,6 +179,20 @@ with `make run`. Remove it if file-based logging is not needed.
 Log files should use **structured logging**, assuming that they will be
 consumed by observability tools. Structured logs allow integration with
 observability platforms such as log aggregation and monitoring systems.
+
+### VSCode settings (.vscode/) (optional)
+
+The `.vscode/` directory provides recommended Visual Studio Code settings
+to improve the development experience.
+
+These settings may include:
+
+- automatic linting and formatting
+- automatic Markdown linting
+
+Using these settings is optional, but recommended for a smoother and more
+consistent development workflow. If you use a different editor, you can
+ignore or remove this directory.
 
 ### Project Metadata (`pyproject.toml`)
 
