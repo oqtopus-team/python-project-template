@@ -32,7 +32,9 @@ This template includes a modern Python development environment:
 - testing with **pytest**
 - documentation using **MkDocs + Material**
 - automatic API reference generation with **mkdocstrings**
-- Markdown linting with **pymarkdownlint**
+- markdown linting with **pymarkdownlint**
+- recommended VSCode settings (`.vscode/settings.json`)
+- pull request-based development workflow
 - GitHub Actions CI workflow
 - coverage reporting with **Codecov**
 - documentation hosting via **Read the Docs**
@@ -49,6 +51,7 @@ This template includes a modern Python development environment:
 ├─ docs_scripts/      # Helper scripts for building MkDocs documentation (optional)
 ├─ config/            # Example configuration files (optional)
 ├─ logs/              # Application log files (optional)
+├─ .vscode/           # VSCode settings (optional)
 ├─ .github/           # GitHub workflows and repository settings
 ├─ pyproject.toml     # Project configuration and dependencies
 ├─ Makefile           # Development commands
@@ -176,6 +179,20 @@ with `make run`. Remove it if file-based logging is not needed.
 Log files should use **structured logging**, assuming that they will be
 consumed by observability tools. Structured logs allow integration with
 observability platforms such as log aggregation and monitoring systems.
+
+### VSCode settings (.vscode/) (optional)
+
+The `.vscode/` directory provides recommended Visual Studio Code settings
+to improve the development experience.
+
+These settings may include:
+
+- automatic linting and formatting
+- automatic Markdown linting
+
+Using these settings is optional, but recommended for a smoother and more
+consistent development workflow. If you use a different editor, you can
+ignore or remove this directory.
 
 ### Project Metadata (`pyproject.toml`)
 
@@ -315,9 +332,43 @@ The documentation for this template project is hosted on Read the Docs:
 If you use external services, configure them for your repository:
 
 - GitHub Actions
+- GitHub Copilot Agent Configuration (optional)
 - Read the Docs (optional)
 - Codecov (optional)
 - Zenodo (optional)
+
+## GitHub Actions (`.github/workflows/`)
+
+This project uses GitHub Actions workflows defined in `.github/workflows/`.
+
+- `ci.yaml`: Runs linting, type checking, tests, and coverage reporting on push and pull requests.
+- `release.yaml` (optional): Includes a "Create GitHub Release" step that creates a release when a version tag is pushed (optional; if enabled, create tags via the command line, as creating a release from the GitHub web UI may cause errors).
+- `labeler.yaml`: Automatically assigns labels and the author to pull requests based on commit messages; you should update the `branches` setting (e.g., `main` or `develop`) to match your repository's default branch.
+
+## GitHub Copilot Agent Configuration (optional)
+
+This template supports GitHub Copilot custom instructions for improving
+AI-assisted development.
+
+- `.github/instructions/commit-message.instructions.md`: Commit message instructions
+- `.github/instructions/pull-request-description.instructions.md`: Pull Request title & description instructions
+
+You can also add repository-wide instructions by creating the following file:
+
+- `.github/copilot-instructions.md`: Repository-wide Copilot instructions
+
+To create `.github/copilot-instructions.md`, refer to the official documentation:
+<https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions?tool=webui>
+
+If necessary, add the following text to `.github/copilot-instructions.md`.
+
+```md
+## Commit and PR conventions
+- Use Conventional Commits style for all commit messages.
+- Follow the commit message instructions in `.github/instructions/commit-message.instructions.md`.
+- Follow the Pull Request title and description instructions in `.github/instructions/pull-request-description.instructions.md`.
+- When creating a Pull Request, follow the sections defined in `.github/pull_request_template.md`.
+```
 
 ### Code Coverage (Codecov)
 

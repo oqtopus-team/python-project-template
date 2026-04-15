@@ -30,6 +30,7 @@ python-project-template/
 ├─ tests/         # Test suite
 ├─ docs/          # Documentation sources (MkDocs)
 ├─ config/        # Example configuration files (optional)
+├─ .vscode/       # VSCode settings (optional)
 ├─ .github/       # GitHub workflows and repository settings
 ├─ pyproject.toml # Project configuration and dependencies
 ├─ Makefile       # Development commands
