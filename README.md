@@ -332,9 +332,43 @@ The documentation for this template project is hosted on Read the Docs:
 If you use external services, configure them for your repository:
 
 - GitHub Actions
+- GitHub Copilot Agent Configuration (optional)
 - Read the Docs (optional)
 - Codecov (optional)
 - Zenodo (optional)
+
+## GitHub Actions (`.github/workflows/`)
+
+This project uses GitHub Actions workflows defined in `.github/workflows/`.
+
+- `ci.yaml`: Runs linting, type checking, tests, and coverage reporting on push and pull requests.
+- `release.yaml` (optional): Includes a "Create GitHub Release" step that creates a release when a version tag is pushed (optional; if enabled, create tags via the command line, as creating a release from the GitHub web UI may cause errors).
+- `labeler.yaml`: Automatically assigns labels and the author to pull requests based on commit messages; you should update the `branches` setting (e.g., `main` or `develop`) to match your repository's default branch.
+
+## GitHub Copilot Agent Configuration (optional)
+
+This template supports GitHub Copilot custom instructions for improving
+AI-assisted development.
+
+- `.github/instructions/commit-message.instructions.md`: Commit message instructions
+- `.github/instructions/pull-request-description.instructions.md`: Pull Request title & description instructions
+
+You can also add repository-wide instructions by creating the following file:
+
+- `.github/copilot-instructions.md`: Repository-wide Copilot instructions
+
+To create `.github/copilot-instructions.md`, refer to the official documentation:
+<https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions?tool=webui>
+
+If necessary, add the following text to `.github/copilot-instructions.md`.
+
+```md
+## Commit and PR conventions
+- Use Conventional Commits style for all commit messages.
+- Follow the commit message instructions in `.github/instructions/commit-message.instructions.md`.
+- Follow the Pull Request title and description instructions in `.github/instructions/pull-request-description.instructions.md`.
+- When creating a Pull Request, follow the sections defined in `.github/pull_request_template.md`.
+```
 
 ### Code Coverage (Codecov)
 
