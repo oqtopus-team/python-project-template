@@ -4,7 +4,9 @@ on:
   pull_request:
     types: [opened, synchronize]
     branches:
-      - develop
+      # Specify the default branch of your repository (e.g., main or develop)
+      - main
+      # - develop
 
 #Permissions are required for PRs by dependabot.
 permissions:
@@ -25,7 +27,7 @@ jobs:
 
       - name: Extract commit messages
         run: |
-          COMMITS=$(git log --format=%B origin/develop..HEAD)
+          COMMITS=$(git log --format=%B origin/${{ github.event.pull_request.base.ref }}..HEAD)
           echo "$COMMITS"
           echo "$COMMITS" > commits.txt
 
