@@ -332,6 +332,7 @@ The documentation for this template project is hosted on Read the Docs:
 If you use external services, configure them for your repository:
 
 - GitHub Actions
+- Dependabot
 - GitHub Copilot Agent Configuration (optional)
 - Read the Docs (optional)
 - Codecov (optional)
@@ -344,6 +345,30 @@ This project uses GitHub Actions workflows defined in `.github/workflows/`.
 - `ci.yaml`: Runs linting, type checking, tests, and coverage reporting on push and pull requests.
 - `release.yaml` (optional): Includes a "Create GitHub Release" step that creates a release when a version tag is pushed (optional; if enabled, create tags via the command line, as creating a release from the GitHub web UI may cause errors).
 - `labeler.yaml`: Automatically assigns labels and the author to pull requests based on commit messages; you should update the `branches` setting (e.g., `main` or `develop`) to match your repository's default branch.
+
+## Dependency (`.github/dependabot.yml`)
+
+This project supports automated dependency updates using [Dependabot](https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide).
+
+Dependabot is configured via `.github/dependabot.yml`.  
+You should update this file to match the package ecosystems used in your repository.
+
+For example, depending on your project setup, you may need to include:
+
+- `devcontainer` for development container configurations
+- `docker` for container images
+- `github-actions` for GitHub Actions workflows
+- `pip` for Python dependencies
+
+When creating a new project from this template:
+
+- Remove unused package ecosystems
+- Add missing ones based on your project configuration
+
+Keeping this configuration aligned with your actual dependencies ensures that
+security updates and version upgrades are handled correctly.
+
+Dependabot works well together with GitHub Actions CI to keep dependencies up to date automatically.
 
 ## GitHub Copilot Agent Configuration (optional)
 
@@ -370,7 +395,7 @@ If necessary, add the following text to `.github/copilot-instructions.md`.
 - When creating a Pull Request, follow the sections defined in `.github/pull_request_template.md`.
 ```
 
-### Code Coverage (Codecov)
+## Code Coverage (Codecov)
 
 Test coverage is generated using **pytest-cov** and can be uploaded to **Codecov**.
 
