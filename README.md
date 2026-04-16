@@ -346,7 +346,7 @@ This project uses GitHub Actions workflows defined in `.github/workflows/`.
 - `release.yaml` (optional): Includes a "Create GitHub Release" step that creates a release when a version tag is pushed (optional; if enabled, create tags via the command line, as creating a release from the GitHub web UI may cause errors).
 - `labeler.yaml`: Automatically assigns labels and the author to pull requests based on commit messages; you should update the `branches` setting (e.g., `main` or `develop`) to match your repository's default branch.
 
-## Dependency (`.github/dependabot.yml`)
+## Dependabot (`.github/dependabot.yml`)
 
 This project supports automated dependency updates using [Dependabot](https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide).
 
@@ -358,7 +358,7 @@ For example, depending on your project setup, you may need to include:
 - `devcontainer` for development container configurations
 - `docker` for container images
 - `github-actions` for GitHub Actions workflows
-- `pip` for Python dependencies
+- `uv` for Python dependencies
 
 When creating a new project from this template:
 
