@@ -108,7 +108,7 @@ After that, running `git commit` will display the template in your configured ed
 ```bash
 git commit
 # Overview (Uncomment one of the following templates)
-#feat: 
+#feat:
 # └  A new feature
 #fix:
 # └  A bug fix
