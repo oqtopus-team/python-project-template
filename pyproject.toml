@@ -31,7 +31,7 @@ repository = "https://github.com/oqtopus-team/python-project-template"
 dev = [
   "mypy>=1.20.2",
   "pre-commit>=4.6.0",
-  "ruff>=0.15.11",
+  "ruff>=0.15.12",
   "types-pyyaml>=6.0.12.20260408",
 ]
 test = [
